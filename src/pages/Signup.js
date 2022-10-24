@@ -22,9 +22,9 @@ const Signup = () => {
                     <form onSubmit={handleSubmit} className="card-body">
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Name</span>
+                                <span className="label-text">Full Name</span>
                             </label>
-                            <input name='name' type="text" placeholder="name" className="input input-bordered" />
+                            <input name='name' type="text" placeholder="fullname" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
