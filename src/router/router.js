@@ -5,6 +5,7 @@ import Signup from "../pages/Signup";
 import Checkout from "../shared/Checkout";
 import CourseSummary from "../shared/CourseSummary";
 import Main from "../shared/Main";
+import Private from "./Private";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -43,7 +44,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/checkout/:id',
-                element: <Checkout></Checkout>,
+                element: <Private><Checkout></Checkout></Private>,
                 loader: ({ params }) => fetch(`https://programoholic-server.vercel.app/course/${params.id}`)
             }
         ]

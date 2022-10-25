@@ -17,6 +17,9 @@ const CourseSummary = () => {
                 <CourseSideNav></CourseSideNav>
                 <div className="col-span-full md:col-span-3 p-4">
                     <div ref={ref} className="card w-100 bg-base-100 shadow-xl">
+                        <div className="card-actions mt-5 justify-center">
+                            <h1 className='text-4xl font-bold'>Course Detials</h1>
+                        </div>
                         <div className="card-actions mt-5 justify-end">
                             <Pdf targetRef={ref} filename="course-summary.pdf" scale={0.6}>
                                 {({ toPdf }) => <button className="btn btn-success mt-5 mr-16" onClick={toPdf}> Generate<FaFilePdf className='inline ml-2'></FaFilePdf></button>}
