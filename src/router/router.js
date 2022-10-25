@@ -1,4 +1,5 @@
 import Courses from "../pages/Courses";
+import Error from "../pages/Error";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
@@ -48,5 +49,9 @@ export const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`https://programoholic-server.vercel.app/course/${params.id}`)
             }
         ]
+    },
+    {
+        path: '*',
+        element: <Error></Error>
     }
 ])

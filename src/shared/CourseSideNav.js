@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const CourseSideNav = () => {
     const [categories, setCategories] = useState([]);
@@ -12,11 +12,11 @@ const CourseSideNav = () => {
         <div>
             <ul className="menu bg-base-100 w-56 ml-6 p-2 rounded-box">
                 <li className="menu-title">
-                    <span>Category</span>
+                    <span className='mb-2'>Category</span>
                 </li>
                 {
-                    categories.map(category => <li className="bordered" key={category.id}>
-                        <Link to={`/courses/${category.id}`}>{category.name}</Link>
+                    categories.map(category => <li key={category.id}>
+                        <NavLink className={({ isActive }) => isActive ? "bg-success" : undefined} to={`/courses/${category.id}`}>{category.name}</NavLink>
                     </li>)
                 }
             </ul>
