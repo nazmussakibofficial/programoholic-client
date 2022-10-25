@@ -23,6 +23,10 @@ const UserContext = ({ children }) => {
         return signInWithPopup(auth, provider);
     }
 
+    const updateProf = (profile) => {
+        return updateProf(auth.currentUser, profile)
+    }
+
     const logOut = () => {
         return signOut(auth);
     }
@@ -38,7 +42,7 @@ const UserContext = ({ children }) => {
         }
     }, [])
 
-    const authInfo = { user, providerLogin, logOut, createUser, signIn }
+    const authInfo = { user, providerLogin, logOut, createUser, signIn, updateProf }
 
     return (
         <AuthContext.Provider value={authInfo}>

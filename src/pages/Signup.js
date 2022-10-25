@@ -1,12 +1,29 @@
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React from 'react';
 import { useContext } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../utilities/UserContext';
-
+import './form.css';
 
 const Signup = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateProf, providerLogin } = useContext(AuthContext);
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
+    const handleGoogleSignin = () => {
+        providerLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+            })
+            .catch(e => console.error(e))
+    }
+    const handleGithubSignin = () => {
+        providerLogin(githubProvider)
+            .then(result => {
+                const user = result.user;
+            })
+            .catch(e => console.error(e))
+    }
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
@@ -18,10 +35,21 @@ const Signup = () => {
         createUser(email, password)
             .then(result => {
                 const user = result.user;
+                handleUpdateProf(name, photo)
                 form.reset();
             })
             .catch(e => console.error(e))
 
+    }
+
+    const handleUpdateProf = (name, photo) => {
+        const profile = {
+            displayName: name,
+            photoURL: photo
+        }
+        updateProf(profile)
+            .then(() => { })
+            .catch(() => { })
     }
     return (
         <div className="hero min-h-screen bg-base-200 form-body">
@@ -64,10 +92,10 @@ const Signup = () => {
                     </div>
                     <h1 className='text-lg text-center'>--------Or--------</h1>
                     <div className="form-control">
-                        <button className="btn btn-ghost"><FaGoogle className='mr-2'></FaGoogle> Login with Google</button>
+                        <button onClick={handleGoogleSignin} className="btn btn-ghost mx-2"><FaGoogle className='mr-2'></FaGoogle> Login with Google</button>
                     </div>
                     <div className="form-control mb-4">
-                        <button className="btn btn-ghost"><FaGithub className='mr-2'></FaGithub> Login with Github</button>
+                        <button onClick={handleGithubSignin} className="btn btn-ghost mx-2"><FaGithub className='mr-2'></FaGithub> Login with Github</button>
                     </div>
 
 

@@ -1,6 +1,8 @@
+import Courses from "../pages/Courses";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
+import CourseSummary from "../shared/CourseSummary";
 import Main from "../shared/Main";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -22,6 +24,21 @@ export const router = createBrowserRouter([
             {
                 path: '/signup',
                 element: <Signup></Signup>
+            },
+            {
+                path: '/courses',
+                element: <Courses></Courses>,
+                loader: () => fetch('https://programoholic-server.vercel.app/course')
+            },
+            {
+                path: '/courses/:id',
+                element: <Courses></Courses>,
+                loader: ({ params }) => fetch(`https://programoholic-server.vercel.app/category/${params.id}`)
+            },
+            {
+                path: '/course/:id',
+                element: <CourseSummary></CourseSummary>,
+                loader: ({ params }) => fetch(`https://programoholic-server.vercel.app/course/${params.id}`)
             }
         ]
     }

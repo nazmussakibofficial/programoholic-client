@@ -1,0 +1,6 @@
+.course-bg {
+    background: url(../img/course-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
