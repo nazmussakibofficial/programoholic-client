@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import CourseSideNav from '../shared/CourseSideNav';
 import '../pages/Course.css';
 import { FaDollarSign, FaStar, FaFilePdf } from 'react-icons/fa';
@@ -10,7 +10,7 @@ const ref = React.createRef();
 const CourseSummary = () => {
 
     const course = useLoaderData();
-    const { title, details, image_url, rating, cost } = course;
+    const { title, details, image_url, rating, cost, _id } = course;
     return (
         <div style={{ minHeight: '1080px' }} className='course-bg py-16 mt-16'>
             <div className="grid grid-cols-4 gap-4">
@@ -32,7 +32,7 @@ const CourseSummary = () => {
                                 <div className="badge badge-outline text-xl p-4"><FaDollarSign className='mr-2'></FaDollarSign>{cost}</div>
                                 <div className="badge badge-outline text-xl p-4"><FaStar className='mr-2'></FaStar>{rating.number}</div>
                             </div>
-                            <button className="btn btn-success mt-5">Get premium access</button>
+                            <button className="btn btn-success mt-5"><Link to={`/checkout/${_id}`}>Get premium access</Link></button>
                         </div>
                     </div>
                 </div>

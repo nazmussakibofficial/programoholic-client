@@ -2,6 +2,7 @@ import Courses from "../pages/Courses";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
+import Checkout from "../shared/Checkout";
 import CourseSummary from "../shared/CourseSummary";
 import Main from "../shared/Main";
 
@@ -38,6 +39,11 @@ export const router = createBrowserRouter([
             {
                 path: '/course/:id',
                 element: <CourseSummary></CourseSummary>,
+                loader: ({ params }) => fetch(`https://programoholic-server.vercel.app/course/${params.id}`)
+            },
+            {
+                path: '/checkout/:id',
+                element: <Checkout></Checkout>,
                 loader: ({ params }) => fetch(`https://programoholic-server.vercel.app/course/${params.id}`)
             }
         ]
