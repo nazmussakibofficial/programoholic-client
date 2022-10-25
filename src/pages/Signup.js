@@ -1,8 +1,12 @@
 import React from 'react';
+import { useContext } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../utilities/UserContext';
+
 
 const Signup = () => {
+    const { createUser } = useContext(AuthContext);
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
@@ -10,7 +14,14 @@ const Signup = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, photo, email, password)
+
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                form.reset();
+            })
+            .catch(e => console.error(e))
+
     }
     return (
         <div className="hero min-h-screen bg-base-200 form-body">
@@ -36,13 +47,13 @@ const Signup = () => {
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input name='email' type="text" placeholder="email" className="input input-bordered" />
+                            <input name='email' type="text" placeholder="email" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input name='password' type="password" placeholder="password" className="input input-bordered" />
+                            <input name='password' type="password" placeholder="password" className="input input-bordered" required />
                         </div>
                         <div className="form-control mt-6">
                             <button type='submit' className="btn btn-success">Sign up</button>

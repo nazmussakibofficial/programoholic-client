@@ -1,22 +1,31 @@
 import React from 'react';
-import SwiftSlider from 'react-swift-slider'
+import { Slide } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css'
 
 
 
 const Home = () => {
-    const data = [
-        { 'id': '1', 'src': 'https://online.illinois.edu/images/default-source/default-album/homepage-slider-1.jpg?sfvrsn=4a5e8611_2' },
-        { 'id': '2', 'src': 'https://spanish.latinadvisor.com/assets/images/what-to-study/online-courses/banner-online-courses.png' },
-        { 'id': '3', 'src': 'https://www.thinknexttraining.com/images/online-summer-training-banner.jpg' },
+    const images = [
+        { url: "https://online.illinois.edu/images/default-source/default-album/homepage-slider-1.jpg?sfvrsn=4a5e8611_2" },
+        { url: "https://spanish.latinadvisor.com/assets/images/what-to-study/online-courses/banner-online-courses.png" },
+        { url: "https://www.thinknexttraining.com/images/online-summer-training-banner.jpg" },
     ];
-
 
     return (
         <div >
-            <SwiftSlider data={data} />
+            <div className="slide-container">
+                <Slide>
+                    {images.map((image, index) => (
+                        <div className="each-slide" key={index}>
+                            <div style={{ 'backgroundImage': `url(${image.url})`, height: '500px', }}>
+                            </div>
+                        </div>
+                    ))}
+                </Slide>
+            </div>
             <div className='container mx-auto my-16 px-4'>
                 <h1 className="text-5xl font-bold text-dark bg-white text-center mb-6 p-4 rounded-lg">Why Join Us</h1>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                     <div className="card w-100 bg-base-100 shadow-xl">
                         <div className="card-body">
                             <h2 className="card-title">Expert Teachers</h2>
