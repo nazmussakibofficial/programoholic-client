@@ -2,7 +2,7 @@
 
 ## Deployment
 
-[Live site](https://lambent-granita-a5efca.netlify.app/)
+[Live site](https://programoholic-981e6.web.app/)
 
 ## Frameworks used:
 
