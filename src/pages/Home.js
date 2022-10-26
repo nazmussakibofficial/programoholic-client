@@ -25,7 +25,7 @@ const Home = () => {
             </div>
             <div className='container mx-auto my-16 px-4'>
                 <h1 className="text-5xl font-bold text-dark bg-white text-center mb-6 p-4 rounded-lg">Why Join Us</h1>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="card w-100 bg-base-100 shadow-xl">
                         <div className="card-body">
                             <h2 className="card-title">Expert Teachers</h2>

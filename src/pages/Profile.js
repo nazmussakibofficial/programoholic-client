@@ -1,50 +1,35 @@
 import React from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../utilities/UserContext';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './Profile.css';
 
 const Profile = () => {
-    const { user, loading, updateProf } = useContext(AuthContext);
+    const { user, updateProf } = useContext(AuthContext);
     const handleChange = event => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
         const photo = form.photo.value;
 
-        if (name) {
-            updateProf({ displayName: name })
-                .then(() => { })
-                .catch(() => { })
-        }
-        else if (photo) {
-            updateProf({ photoURL: photo })
-                .then(() => { })
-                .catch(() => { })
-        }
-        else if (name && photo) {
+        if (name && photo) {
             updateProf({ displayName: name, photoURL: photo })
                 .then(() => { })
                 .catch(() => { })
         }
+
         else {
-            toast.warning('At least change one detail!', {
-                position: "top-center",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-            });
+            updateProf({ displayName: name })
+                .then(() => { })
+                .catch(() => { })
         }
+
+
+
 
     }
     return (
-        !loading && <div className='profile-bg'>
-            <ToastContainer /><ToastContainer />
+        <div className='profile-bg'>
             <div className="p-16">
                 <div className="p-8 bg-white shadow mt-24">
                     <div className="grid grid-cols-1 md:grid-cols-1">
@@ -70,7 +55,7 @@ const Profile = () => {
                                             <label className="label">
                                                 <span className="label-text">Full Name</span>
                                             </label>
-                                            <input name="name" type="text" placeholder="full name" className="input input-bordered" />
+                                            <input name="name" type="text" placeholder="full name" className="input input-bordered" required />
                                         </div>
                                         <div className="form-control">
                                             <label className="label">
