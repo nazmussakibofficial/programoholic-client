@@ -1,5 +1,6 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React from 'react';
+import { useState } from 'react';
 import { useContext } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -7,6 +8,7 @@ import { AuthContext } from '../utilities/UserContext';
 import './form.css';
 
 const Signup = () => {
+    const [error, setError] = useState('');
     const { createUser, updateProf, providerLogin } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
@@ -38,7 +40,7 @@ const Signup = () => {
                 handleUpdateProf(name, photo)
                 form.reset();
             })
-            .catch(e => console.error(e))
+            .catch(e => setError(e.message))
 
     }
 
@@ -82,6 +84,11 @@ const Signup = () => {
                                 <span className="label-text">Password</span>
                             </label>
                             <input name='password' type="password" placeholder="password" className="input input-bordered" required />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="text-xl text-red-500">{error}</span>
+                            </label>
                         </div>
                         <div className="form-control mt-6">
                             <button type='submit' className="btn btn-success">Sign up</button>

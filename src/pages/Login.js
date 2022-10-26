@@ -5,8 +5,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../utilities/UserContext';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import { useState } from 'react';
 
 const Login = () => {
+    const [error, setError] = useState('');
     const { providerLogin, signIn } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
@@ -41,7 +43,7 @@ const Login = () => {
                 form.reset();
                 navigate(from, { replace: true });
             })
-            .catch(error => console.error(error))
+            .catch(error => setError(error.message))
     }
     return (
         <div className="hero min-h-screen bg-base-200 form-body">
@@ -63,8 +65,13 @@ const Login = () => {
                             </label>
                             <input name='password' type="password" placeholder="password" className="input input-bordered" required />
                             <div className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                <Link to='password-reset' className="label-text-alt link link-hover">Forgot password?</Link>
                             </div>
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="text-xl text-red-500">{error}</span>
+                            </label>
                         </div>
                         <div className="form-control mt-6">
                             <button type='submit' className="btn btn-success">Login</button>

@@ -12,7 +12,7 @@ const CourseSummary = () => {
     const course = useLoaderData();
     const { title, details, image_url, rating, cost, _id } = course;
     return (
-        <div style={{ minHeight: '1080px' }} className='course-bg py-16 mt-16'>
+        <div style={{ minHeight: '1080px' }} className='course-bg py-16 mt-4'>
             <div className="grid grid-cols-4 gap-4">
                 <CourseSideNav></CourseSideNav>
                 <div className="col-span-full md:col-span-3 p-4">

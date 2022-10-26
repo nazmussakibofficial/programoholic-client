@@ -2,6 +2,7 @@ import Courses from "../pages/Courses";
 import Error from "../pages/Error";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
+import PasswordReset from "../pages/PasswordReset";
 import Signup from "../pages/Signup";
 import Checkout from "../shared/Checkout";
 import CourseSummary from "../shared/CourseSummary";
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
                 path: '/checkout/:id',
                 element: <Private><Checkout></Checkout></Private>,
                 loader: ({ params }) => fetch(`https://programoholic-server.vercel.app/course/${params.id}`)
+            },
+            {
+                path: '/login/password-reset',
+                element: <PasswordReset></PasswordReset>,
             }
         ]
     },
