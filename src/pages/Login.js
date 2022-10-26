@@ -9,7 +9,7 @@ import { useState } from 'react';
 
 const Login = () => {
     const [error, setError] = useState('');
-    const { providerLogin, signIn } = useContext(AuthContext);
+    const { providerLogin, signIn, darkToggle } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
     const location = useLocation();
@@ -46,26 +46,26 @@ const Login = () => {
             .catch(error => setError(error.message))
     }
     return (
-        <div className="hero min-h-screen bg-base-200 form-body">
-            <div className="hero-content flex-col">
+        <div className={`${darkToggle && 'dark'} hero min-h-screen bg-base-200 form-body`}>
+            <div className="hero-content flex-col dark:text-white">
                 <div className="text-center lg:text-left">
-                    <h1 className="text-5xl font-bold text-dark bg-white text-center mb-6 p-4 rounded-lg">Login now!</h1>
+                    <h1 className="text-5xl font-bold text-dark bg-white text-center mb-6 p-4 rounded-lg dark:bg-gray-700">Login now!</h1>
                 </div>
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 p-5">
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 p-5 dark:bg-gray-700">
                     <form onSubmit={handleSubmit} className="card-body">
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className="label-text dark:text-white">Email</span>
                             </label>
                             <input name='email' type="text" placeholder="email" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Password</span>
+                                <span className="label-text dark:text-white">Password</span>
                             </label>
                             <input name='password' type="password" placeholder="password" className="input input-bordered" required />
                             <div className="label">
-                                <Link to='password-reset' className="label-text-alt link link-hover">Forgot password?</Link>
+                                <Link to='password-reset' className="label-text-alt link link-hover dark:text-white dark:hover:text-white">Forgot password?</Link>
                             </div>
                         </div>
                         <div className="form-control">
@@ -73,12 +73,12 @@ const Login = () => {
                                 <span className="text-xl text-red-500">{error}</span>
                             </label>
                         </div>
-                        <div className="form-control mt-6">
-                            <button type='submit' className="btn btn-success">Login</button>
+                        <div className="form-control">
+                            <button type='submit' className="btn btn-success dark:text-white">Login</button>
                         </div>
                     </form>
                     <div className="label text-sm">
-                        <Link to="/signup" className="link link-hover">Or register here, if you don't have an account</Link>
+                        <Link to="/signup" className="link link-hover dark:hover:text-white">Or register here, if you don't have an account</Link>
                     </div>
                     <h1 className='text-lg text-center'>--------Or--------</h1>
                     <div className="form-control">

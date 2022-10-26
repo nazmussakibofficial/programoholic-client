@@ -9,6 +9,7 @@ export const AuthContext = createContext();
 const auth = getAuth(app);
 
 const UserContext = ({ children }) => {
+    const [darkToggle, setDarkToggle] = useState(false);
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -54,7 +55,8 @@ const UserContext = ({ children }) => {
 
     const authInfo = {
         user, loading, providerLogin, logOut,
-        createUser, signIn, updateProf, resetPassword
+        createUser, signIn, updateProf, resetPassword,
+        darkToggle, setDarkToggle
     }
 
     return (

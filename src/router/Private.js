@@ -8,7 +8,7 @@ const Private = ({ children }) => {
     const location = useLocation();
 
     if (loading) {
-        return <progress className="progress progress-success w-56"></progress>
+        return <div className='flex justify-center items-center'><progress className="progress progress-success w-56"></progress></div>
 
     }
 
