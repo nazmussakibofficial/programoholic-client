@@ -4,6 +4,7 @@ import Error from "../pages/Error";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import PasswordReset from "../pages/PasswordReset";
+import Profile from "../pages/Profile";
 import Signup from "../pages/Signup";
 import Checkout from "../shared/Checkout";
 import CourseSummary from "../shared/CourseSummary";
@@ -33,6 +34,10 @@ export const router = createBrowserRouter([
             {
                 path: '/signup',
                 element: <Signup></Signup>
+            },
+            {
+                path: '/profile',
+                element: <Profile></Profile>
             },
             {
                 path: '/courses',
