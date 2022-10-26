@@ -1,3 +1,4 @@
+import Blog from "../pages/Blog";
 import Courses from "../pages/Courses";
 import Error from "../pages/Error";
 import Home from "../pages/Home";
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
             },
             {
                 path: '/login',
