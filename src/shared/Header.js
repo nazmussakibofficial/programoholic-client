@@ -14,7 +14,7 @@ const Header = () => {
     }
     return (
         <div className={`${darkToggle && 'dark'}`}>
-            <div className="navbar bg-base-100 dark:bg-gray-700 dark:text-white" >
+            <div className="navbar bg-base-100 dark:bg-slate-700 dark:text-white" >
                 <div className="flex-1">
                     <img className='w-6' src="https://img.icons8.com/color/344/p-cute.png" alt="" />
                     <Link to='/' className="btn btn-ghost normal-case text-xl">Programoholic</Link>
@@ -42,7 +42,7 @@ const Header = () => {
                                             <img src={user.photoURL} alt='' title={user.displayName} />
                                         </div>
                                     </label>
-                                    <ul tabIndex={1} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52 dark:bg-gray-700 dark:text-white">
+                                    <ul tabIndex={1} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52 dark:bg-slate-700 dark:text-white">
                                         <li><Link to='/profile'>Profile</Link></li>
                                         <li><button onClick={handleLogOut}>Logout</button></li>
                                     </ul>

@@ -49,21 +49,21 @@ const Login = () => {
         <div className={`${darkToggle && 'dark'} hero min-h-screen bg-base-200 form-body`}>
             <div className="hero-content flex-col dark:text-white">
                 <div className="text-center lg:text-left">
-                    <h1 className="text-5xl font-bold text-dark bg-white text-center mb-6 p-4 rounded-lg dark:bg-gray-700">Login now!</h1>
+                    <h1 className="text-5xl font-bold text-dark bg-white text-center mb-6 p-4 rounded-lg dark:bg-slate-700">Login now!</h1>
                 </div>
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 p-5 dark:bg-gray-700">
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 p-5 dark:bg-slate-700">
                     <form onSubmit={handleSubmit} className="card-body">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text dark:text-white">Email</span>
                             </label>
-                            <input name='email' type="text" placeholder="email" className="input input-bordered" required />
+                            <input name='email' type="text" placeholder="email" className="input input-bordered dark:text-black" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text dark:text-white">Password</span>
                             </label>
-                            <input name='password' type="password" placeholder="password" className="input input-bordered" required />
+                            <input name='password' type="password" placeholder="password" className="input input-bordered dark:text-black" required />
                             <div className="label">
                                 <Link to='password-reset' className="label-text-alt link link-hover dark:text-white dark:hover:text-white">Forgot password?</Link>
                             </div>

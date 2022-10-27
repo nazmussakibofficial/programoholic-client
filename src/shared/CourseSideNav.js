@@ -13,9 +13,9 @@ const CourseSideNav = () => {
     }, [])
     return (
         <div className={`${darkToggle && 'dark'}`}>
-            <ul className="menu bg-base-100 w-56 ml-6 mt-4 p-2 rounded-box dark:bg-gray-700 dark:text-white">
+            <ul className="menu bg-base-100 w-56 ml-6 mt-4 p-2 rounded-box dark:bg-slate-700 dark:text-white">
                 <li className="text-black text-sm dark:text-white">
-                    <span className='mb-2'>Category</span>
+                    <span className='mb-2'>Category :</span>
                 </li>
                 {
                     categories.map(category => <li key={category.id}>

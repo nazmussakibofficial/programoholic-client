@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 const PasswordReset = () => {
     const [error, setError] = useState('');
-    const { resetPassword } = useContext(AuthContext);
+    const { resetPassword, darkToggle } = useContext(AuthContext);
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -30,15 +30,15 @@ const PasswordReset = () => {
             .catch(error => setError(error.message))
     }
     return (
-        <div className='flex justify-center mt-5 py-20 form-body'>
-            <ToastContainer /><ToastContainer />
-            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+        <div className={`${darkToggle && 'dark'} flex justify-center py-20 form-body`}>
+            <ToastContainer />
+            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 dark:bg-slate-700 dark:text-white">
                 <form onSubmit={handleSubmit} className="card-body">
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Email</span>
+                            <span className="label-text dark:text-white">Email</span>
                         </label>
-                        <input name="email" type="text" placeholder="email" className="input input-bordered" required />
+                        <input name="email" type="text" placeholder="email" className="input input-bordered dark:text-black" required />
                     </div>
                     <div className="form-control">
                         <label className="label">
@@ -46,7 +46,7 @@ const PasswordReset = () => {
                         </label>
                     </div>
                     <div className="form-control mt-6">
-                        <button className="btn btn-success">Reset Your Password</button>
+                        <button className="btn btn-success dark:text-white">Reset Your Password</button>
                     </div>
                 </form>
             </div>

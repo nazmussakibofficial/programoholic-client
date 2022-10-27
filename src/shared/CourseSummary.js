@@ -17,8 +17,8 @@ const CourseSummary = () => {
         <div style={{ minHeight: '1080px' }} className={`course-bg py-16 ${darkToggle && 'dark'}`}>
             <div className="grid grid-cols-7 gap-4 w-full">
                 <CourseSideNav></CourseSideNav>
-                <div className="col-span-full md:col-span-5 p-4 dark:bg-gray-700 dark:text-white">
-                    <div className="card w-100 bg-base-100 dark:bg-gray-700 shadow-xl">
+                <div className="col-span-full md:col-span-5 p-4">
+                    <div className="card w-100 bg-base-100 dark:bg-slate-700 dark:text-white shadow-xl">
                         <div className="card-actions mt-5 justify-center">
                             <h1 className='text-4xl font-bold'>Course Detials</h1>
                         </div>

@@ -11,14 +11,14 @@ const Footer = () => {
                     <h3 className="text-3xl mb-3"> Download our app </h3>
                     <p> Learn. Code. Conquer. </p>
                     <div className="flex justify-center my-10">
-                        <div className="flex items-center  bg-white border border-white w-auto rounded-lg px-4 py-2 w-52 mx-2 dark:bg-gray-700 dark:border-gray-700">
+                        <div className="flex items-center  bg-white border border-white w-auto rounded-lg px-4 py-2 w-52 mx-2 dark:bg-slate-700 dark:border-gray-700">
                             <img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" className="w-7 md:w-8" alt='' />
                             <div className="text-left text-black ml-3 dark:text-white">
                                 <p className='text-xs'>Download on </p>
                                 <p className="text-sm md:text-base"> Google Play Store </p>
                             </div>
                         </div>
-                        <div className="flex items-center bg-white border border-white w-auto rounded-lg px-4 py-2 w-44 mx-2 dark:bg-gray-700 dark:border-gray-700">
+                        <div className="flex items-center bg-white border border-white w-auto rounded-lg px-4 py-2 w-44 mx-2 dark:bg-slate-700 dark:border-gray-700">
                             <img src="https://cdn-icons-png.flaticon.com/512/888/888841.png" className="w-7 md:w-8" alt='' />
                             <div className="text-left text-black ml-3 dark:text-white">
                                 <p className='text-xs'>Download on </p>

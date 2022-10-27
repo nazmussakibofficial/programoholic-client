@@ -8,10 +8,10 @@ const Blog = () => {
     return (
         <div className={`${darkToggle && 'dark'} blog-bg pt-8`}>
             <div class='flex items-center justify-center min-h-screen'>
-                <div class='w-full max-w-lg px-10 py-8 mx-auto bg-white rounded-lg shadow-xl dark:bg-gray-700 dark:text-white'>
+                <div class='w-full max-w-lg px-10 py-8 mx-auto bg-white rounded-lg shadow-xl dark:bg-slate-700 dark:text-white'>
                     <h1 class="text-xl mb-10 text-center">Some Questions & Answers</h1>
 
-                    <details class="w-full bg-white border border-green-500 cursor-pointer mb-3 dark:bg-gray-700">
+                    <details class="w-full bg-white border border-green-500 cursor-pointer mb-3 dark:bg-slate-700">
                         <summary class="w-full bg-white text-dark flex justify-between px-4 py-3  after:content-['+'] dark:bg-green-500">What is CORS?</summary>
                         <p class="px-4 py-3">
                             CORS is a policy that allows a server to indicate any origins other than its own from which a browser should permit loading sources.
@@ -19,7 +19,7 @@ const Blog = () => {
                         </p>
                     </details>
 
-                    <details class="w-full bg-white border border-green-500 cursor-pointer mb-3 dark:bg-gray-700">
+                    <details class="w-full bg-white border border-green-500 cursor-pointer mb-3 dark:bg-slate-700">
                         <summary class="w-full bg-white text-dark flex justify-between px-4 py-3 after:content-['+'] dark:bg-green-500">
                             Why are you using firebase? What other options do you have to implement authentication?
                         </summary>
@@ -29,7 +29,7 @@ const Blog = () => {
                         </p>
                     </details>
 
-                    <details class="w-full bg-white border border-green-500 cursor-pointer mb-3 dark:bg-gray-700">
+                    <details class="w-full bg-white border border-green-500 cursor-pointer mb-3 dark:bg-slate-700">
                         <summary class="w-full bg-white text-dark flex justify-between px-4 py-3  after:content-['+'] dark:bg-green-500">
                             How does the private route work?
                         </summary>
@@ -38,7 +38,7 @@ const Blog = () => {
                             Such as not letting users go to profile page if they are not logged in.
                         </p>
                     </details>
-                    <details class="w-full bg-white border border-green-500 cursor-pointer mb-3 dark:bg-gray-700">
+                    <details class="w-full bg-white border border-green-500 cursor-pointer mb-3 dark:bg-slate-700">
                         <summary class="w-full bg-white text-dark flex justify-between px-4 py-3  after:content-['+'] dark:bg-green-500">
                             What is Node? How does Node work?
                         </summary>
