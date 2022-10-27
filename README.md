@@ -4,7 +4,7 @@
 
 [Live site](https://programoholic-981e6.web.app/)
 
-## Frameworks used:
+## Frameworks/libraries used:
 
 ### `React, firebase, react router dom, tailwind, daisyUI, react toastify, react to pdf, react icons, react slideshow image`
 
